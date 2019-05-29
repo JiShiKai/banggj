@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>太原磅管家科技有限公司</title>
+	<link rel="stylesheet" href="css/index_pc.css" />
+	<link rel="stylesheet" href="css/index_ipad.css" media="(max-width:1000px) and (min-width:600px)"/>
+    <link rel="stylesheet" href="css/index_phone.css"  media="(max-width:599px)"/>
+    <script src="js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+    <div class="top_nav">
+        <div class="nav_center">
+            <div class="logo">
+                <img src="img/logo.png" alt="">
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="#" style="color:blue">首页</a></li>
+                    <li><a href="#">走进磅管家</a></li>
+                    <li><a href="#">产品方案</a></li>
+                    <li><a href="#">精品案例</a></li>
+                    <li><a href="#">荣誉资质</a></li>
+                    <li><a href="#">新闻资讯</a></li>
+                    <li><a href="#">人才招聘</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="btn">
+                <img src="img/导航.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="lunbo">
+        <!-- 轮播图列表 -->
+        <ul id="slideImg">
+            <li style="opacity:1;"><img src="img/u1.jpg"></li>
+            <li><img src="img/u3.jpg"></li>
+            <li><img src="img/u5.jpg"></li>
+            <li><img src="img/u7.jpg"></li>
+        </ul>
+        <!-- 轮播图导航按钮 -->
+        <div class="buttons" id="buttons">
+            <span class="current"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- 前后切换按钮 -->
+        <div class="anniu">
+            <div class="prev" id="prev"><</div>
+            <div class="next" id="next">></div>
+        </div>
+    </div>
+    <div class="solution">
+        <div class="container">
+            <div class="title">
+                <h5>Solution</h5>
+                <h1>产品方案</h1>
+            </div>
+            <div class="fangan">
+                <div class="kuang">
+                    <div class="xiang1">
+                        <img src="img/car1.png" alt="" class="jing">
+                        <img src="img/car2.gif" alt="" class="dong">
+                        <h2>货车不进站抓拍系统</h2>
+                        <h3>有针对性地解决了由于警力不足导致货车闯卡严重的问题</h3>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div class="xiang2">
+                        <img src="img/cang1.png" alt="" class="jing">
+                        <img src="img/cang2.gif" alt="" class="dong">
+                        <h2>源头企业综合管理系统</h2>
+                        <h3>不仅可以提高企业管理水平和效益收入，还可同时积极响应政府对于治超、环保的要求......</h3>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div class="xiang3">
+                        <img src="img/dian1.png" alt="" class="jing">
+                        <img src="img/dian2.gif" alt="" class="dong">
+                        <h2>科技治超信息管理指挥系统</h2>
+                        <h3>科技治超信息管理指挥系统是一套面向交通治超行业的综合性信息管理系统</h3>
+                    </div>
+                </div>
+                <div class="kuang">
+                    <div class="xiang4">
+                        <img src="img/tu1.png" alt="" class="jing">
+                        <img src="img/tu2.gif" alt="" class="dong">
+                        <h2>非现场执法系统</h2>
+                        <h3>非现场执法系统是对治超站点的有益补充，是科技治超发展的未来方向</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cases">
+            <div class="anli">
+                <div class="title">
+                    <h5>Excellent cases</h5>
+                    <h1>精品案例</h1>
+                </div>
+                <div class="ditu">
+                    <img src="img/map.gif" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="guanzhu">
+                <div class="center">
+                    <div class="left">
+                        <h2>快捷导航</h2>
+                        <ul>
+                            <li>产品方案</li>
+                            <li>精品案例</li>
+                            <li>荣誉资质</li>
+                            <li>联系我们</li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <h2>关注磅管家</h2>
+                        <img src="img/u186.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="container">
+                    <p>©太原磅管家科技有限公司 版权所有 晋ICP备12008001号-1 晋公网安备 14010502050302号</p>
+                    <p>联系方式 ：0351-8383873</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function(){
+            var lunbo = document.getElementById('lunbo');
+            var prev = document.getElementById('prev');
+            var next = document.getElementById('next');
+            var imgs = document.getElementById('slideImg');
+            var spans = document.getElementsByTagName('span');
+            var buttons = document.getElementById('buttons');
+            var index = 0;//保存当前图片的下标位置
+            var timer = null;
+            var lis = imgs.getElementsByTagName('li');
+            prev.onclick = function(){
+                index--
+                if (index < 0) {
+                    index = 3;
+                }
+                animate(index);
+            }
+            next.onclick = function(){
+                index++
+                if (index > 3) {
+                    index = 0;
+                }
+                animate(index);
+            }
+            function animate(){	
+                for(i = 0;i < lis.length;i++){
+                        lis[i].style.opacity = 0;
+                        spans[i].className = '';
+                }
+                lis[index].style.opacity = 1;
+                spans[index].className = 'current';
+            }
+            for(var j = 0;j < spans.length;j ++){
+                spans[j].onclick = function(){
+                    for(var a = 0;a < spans.length;a++){
+                        if(this == spans[a]){
+                            index = a;
+                            animate();
+                        }
+                    }
+                }
+            }
+            function play(){
+                timer = window.setInterval(next.onclick,2500);
+            }
+            play();
+            function stop(){
+                clearInterval(timer);
+            }
+            spans.onmouseover = function(){
+                stop();
+            }
+            spans.onmouseout = function(){
+                play();
+            }
+
+            $(".btn").click(function(){
+                $(".nav").slideToggle();
+            })
+            $(window).resize(function(){
+                if ($(window).width() > 600) {
+                    $('.header .nav').show();
+                } else{
+                    $('.header .nav').hide();
+                }
+            })
+        }
+    </script>
+</body>
+</html>
